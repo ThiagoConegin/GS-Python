@@ -43,6 +43,18 @@ def calcular_paciente_total(paciente):
     paciente_total = len(paciente)
     print(f"O total de pacientes no sistema é: {paciente_total}")
 
+# Função para registrar uma nova consulta
+def registrar_consulta(data_consulta, paciente_consulta, diagnostico_consulta, prescricao_consulta):
+    consulta = {
+        "data": data_consulta,
+        "paciente": paciente_consulta,
+        "diagnostico": diagnostico_consulta,
+        "prescricao": prescricao_consulta
+    }
+
+    registros_consultas.append(consulta)
+    print("Consulta registrada com sucesso!")
+
          
     
 # função para exibir os registros de consultas
