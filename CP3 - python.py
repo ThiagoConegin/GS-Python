@@ -55,12 +55,24 @@ def registrar_consulta(data_consulta, paciente_consulta, diagnostico_consulta, p
     registros_consultas.append(consulta)
     print("Consulta registrada com sucesso!")
 
-         
+#função para detalhar uma consulta
+def detalhar_consulta(pacientes, nome):
+    for pessoa in pacientes:
+        if pessoa["paciente"] == nome:
+            print(f"\nDetalhes da Consulta de {nome}:")
+            print(f"\nData da Consulta: {pessoa['data']}")
+            print(f"Paciente: {pessoa['paciente']}")
+            print(f"Diagnóstico: {pessoa['diagnostico']}")
+            print(f"Prescrição: {pessoa['prescricao']}")
+            break
+    else:
+        print("\nPaciente não encontrado ou não realizou nenhuma consulta")
     
 # função para exibir os registros de consultas
 def registros_de_consultas(consultas):
     consulta_total = len(consultas)
     print(f"\nO total de consultas é: {consulta_total}")
+
     
 
 while True:
@@ -112,3 +124,5 @@ while True:
         break
     else:
         print("\nOpção inválida!")
+
+        
